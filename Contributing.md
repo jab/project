@@ -48,7 +48,7 @@ Occasionally we'll close issues if they appear stale or are too vague - please d
 
 ## Contributing Pull Requests
 
-PR's are even better than issues. We gladly accept community pull requests. In general across the core library and all of the elements, there are a few necessary steps before we can accept a pull request:
+PR's are even better than issues. We gladly accept community pull requests. In general across the core library and all of the elements and tools, there are a few necessary steps before we can accept a pull request:
 
 - Open an issue describing the problem that you are looking to solve in your PR (if one is not already open), and your approach to solving it. This makes it easier to have a conversation around the best general approach for solving your problem, outside of the code itself.
 - Sign the [CLA](https://cla.developers.google.com/clas), as described above.
