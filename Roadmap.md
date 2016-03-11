@@ -17,6 +17,7 @@ We see [Progressive Web Apps](https://developers.google.com/web/progressive-web-
   - Ship a routing solution
   - Ship a lazy-loading solution
   - Ship a l10n/i18n solution
+  - Prototype an offline-first data management and sychronization system
 
 ### Element Maintenance and Performance
 
