@@ -10,14 +10,9 @@ Please feel free to file issues on this repository if you have questions, concer
 
 We see [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps?hl=en) as a big part of the future of the web - web applications that take ["all the right vitamins"](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/) to be added to a user's homescreen, work while the user is offline, send a user push notifications, and more. Many of these types of features that [Service Worker](http://www.html5rocks.com/en/tutorials/service-worker/introduction/) provides also marry extremely well with a component-driven, tight-to-the-platform development model supported by Web Components. We want to publish more around how we see these pieces playing together - how to build on the web platform the way it is intended - and also provide a suite of tools to actually manifest these ideas.
 
-*Goals*:
+*Recently Shipped*:
 
-- Prototype all the pieces needed to build a complete Progressive Web App with Web Components and Service Worker
-  - Publish philosophy around how to structure a web component-based progressive web app - building on the web the way the platform intended!
-  - Ship a routing solution
-  - Ship a lazy-loading solution
-  - Ship a l10n/i18n solution
-  - Prototype an offline-first data management and sychronization system
+[Polymer App Toolbox](https://www.polymer-project.org/1.0/toolbox/) - a set of tools and components useful for building full-fledged Progressive Web Apps. We'll continue to publish new content, demos, and components to make this an even more effective way to build on the modern web.
 
 ### Element Maintenance and Performance
 
@@ -81,9 +76,9 @@ The Polymer team works on [a](https://github.com/PolymerLabs/polyserve) [lot](ht
 
 We want to keep all of the tools modular, but for simplicity and better discovery we're exploring building a wrapped-up "Polymer CLI," that includes the tools we build for Polymer development. Currently we're focusing only on Polymer-specific tools - for things like package management we want to continue to rely on the most commonly-used tools in the broader ecosystem that fit the development model.
 
-*Goal*:
+*Recently Shipped*:
 
-- Prototype Ultimate Polymer CLI
+The [Polymer CLI](https://github.com/polymer/polymer-cli) pulls together a number of useful tools, and makes it easy to get started building a web component or web components-based application.
 
 ### Community and Ecosystem
 
@@ -97,3 +92,5 @@ The Polymer community has grown incredibly quickly and there are a number of ind
   - Regularly publish project and roadmap updates
   - Work with community members to help drive elements forward
   - Use [Polycasts](https://www.youtube.com/playlist?list=PLOU2XLYxmsII5c3Mgw6fNYCzaWrsM3sMN) and builtwithpolymer.org to highlight awesome elements being built
+
+
