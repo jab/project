@@ -6,69 +6,71 @@ As a caveat - this is a living doc, and will evolve as priorities grow and shift
 
 Please feel free to file issues on this repository if you have questions, concerns, or suggestions.
 
+### Polymer 2.0
+
+We are hard at work iterating on the next major version of Polymer.
+
+For details on the goals of 2.0 and the most recent state, check out the [announcement blog post](https://www.polymer-project.org/1.0/blog/2016-09-09-polymer-2.0.html) and the [repository branch](https://github.com/polymer/polymer/tree/2.0-preview).
+
+*Recently Shipped*:
+
+- Polymer 2.0 [preview branch](https://github.com/polymer/polymer/tree/2.0-preview)
+
+*Goals*:
+
+- Make the Polymer library compatible with latest web component specs and shipping implementations.
+  - Update styling system to be compatible with custom properties.
+  - Update shady DOM to be compatible with shadow dom v1.
+  - Update custom elements treatment to be compatible with custom elements v1.
+- Provide a smooth migration from Polymer 1.x.
+  - Provide backwards-compatibility layer that re-creates the `Polymer({})` factory from 1.x.
+  - Provide an upgrade tool for doing mechanical conversions to elements.
+  - Design a "hybrid mode" so that elements built in a certain way can run under 1.x or 2.0.
+- Eliminate leaky abstractions.
+  - Remove `Polymer.dom` API.
+  - Remove the `set/notifyPath` API's.
+- Support ES6 class-based syntax as primary way to build new elements.
+  - `class MyElement extends Polymer.Element` !!
+- Improve factoring for more flexible usage.
+  - Break out "Shady DOM" shim from Polymer.
+  - Break out CSS property shim from Polymer.
+
 ### Building Applications with Polymer  
 
 We see [Progressive Web Apps](https://developers.google.com/web/progressive-web-apps?hl=en) as a big part of the future of the web - web applications that take ["all the right vitamins"](https://infrequently.org/2015/06/progressive-apps-escaping-tabs-without-losing-our-soul/) to be added to a user's homescreen, work while the user is offline, send a user push notifications, and more. Many of these types of features that [Service Worker](http://www.html5rocks.com/en/tutorials/service-worker/introduction/) provides also marry extremely well with a component-driven, tight-to-the-platform development model supported by Web Components. We want to publish more around how we see these pieces playing together - how to build on the web platform the way it is intended - and also provide a suite of tools to actually manifest these ideas.
 
+Moreover, we want to be thinking more about how to manage data flow within large applications built out of web components. We will be exploring how popular patterns like Flux work in a web components world.
+
 *Recently Shipped*:
 
-[Polymer App Toolbox](https://www.polymer-project.org/1.0/toolbox/) - a set of tools and components useful for building full-fledged Progressive Web Apps. We'll continue to publish new content, demos, and components to make this an even more effective way to build on the modern web.
-
-### Element Maintenance and Performance
-
-Much of the core Polymer team's time is spent fixing issues on existing Polymer elements. We're incredibly eager to push forward with new elements to solve new problems, but need to get a handle on the existing maintenance burden. We're approaching this from multiple angles - continually improving quality and fixing bugs, improving the core Polymer team's tools and systems for maintenance, and aiming to be better contributors to the open web components ecosystem.
-
-We're extremely bullish about this growing web component ecosystem, and excited to help it grow in any way we can. We'll lay out in a follow-up blog post many of the ways we're hoping to make it easier and clearer to contribute to the Polymer project, improve turnaround from within the Polymer core team, and better promote community-built web components.
+- [Polymer App Toolbox](https://www.polymer-project.org/1.0/toolbox/) - a set of tools and components useful for building full-fledged Progressive Web Apps. We'll continue to publish new content, demos, and components to make this an even more effective way to build on the modern web.
 
 *Goals*:
 
-- Reduce and achieve sustainable element maintenance costs
+- Continue to add power and functionality to the Polymer App Toolbox and Polymer CLI.
+- Build additional end-to-end demos like the [Shop](https://shop.polymer-project.org/) progressive web app for different verticals.
+
+### Element Porting, Maintenance, and Performance
+
+Much of the core Polymer team's time is spent fixing issues on existing Polymer elements. We're incredibly eager to push forward with new elements to solve new problems, but need to get a handle on the existing maintenance burden. We're approaching this from multiple angles - continually improving quality and fixing bugs, improving the core Polymer team's tools and systems for maintenance, and aiming to be better contributors to the open web components ecosystem.
+
+We're extremely bullish about this growing web component ecosystem, and excited to help it grow in any way we can.
+
+*Goals*:
+
+- Port the 1.x-based elements built by the Polymer team to the 2.0-compatible "hybrid mode," to make it easy for teams relying on these components to upgrade.
+- Reduce and achieve sustainable element maintenance costs.
   - Help promote community-driven elements and bring in additional maintainers from the community.
-  - Increase number of merged community Pull Requests to elements by 100%
+  - Increase number of merged community Pull Requests to elements by 100%.
   - Keep time-to-triage for incoming element issues < 5 days.
 
 We're also always looking for opportunities to improve element performance. We'll particularly be taking a hard look at elements that may be used many times on a single page - things like [paper-input](https://elements.polymer-project.org/elements/paper-input) and [iron-icon](https://elements.polymer-project.org/elements/iron-icon) - to make them as fast and lightweight as possible.
 
 *Goals*:
 
-- Improve our offering of high-performance elements
-  - Identify high-use elements and ship ultra-lightweight versions
-  - Iterate on and share element performance measurement techniques and benchmarks
-
-### Application Layout and Templates
-
-Over the last two years we've been exploring building elements that take the pain out of constructing responsive layouts. We've learned a lot through this process - including shipping many responsive elements within the paper and iron element sets - and have recently been working on a new group of elements to improve the ergonomics and flexibility for building responsive layouts that aren't necessarily tied to material design.
-
-We're incubating this set of elements within the experimental [app-layout elements](https://github.com/PolymerLabs/app-layout) repository. In 2016, we want to polish and ship these new elements and tie them more tightly into the broader mission of making it easier to build large apps with Polymer.
-
-### Core Polymer Library
-
-One of the major value propositions of Polymer is that it gets out of your way - it lets you build as close to the web platform as possible, heavily leveraging many of the critical features of Web Components. It isn't a massive, complex, heavyweight abstraction away from the actual browser - it's just a sugaring on top of the features the browser itself provides. We want to continue pushing the library to fully realize this strength.
-
-With Polymer 1.0, the Polymer library was actually a combination of 3 different "layers" of sugaring on top of Web Components. We [experimentally exposed these layers](https://www.polymer-project.org/1.0/docs/devguide/experimental.html#feature-layering), to attempt to allow element authors to opt-in to additional features of Polymer.
-
-The feedback we've gotten on this layering is that the idea is sound, but the actual feature division between the layers missed the mark. We're focusing now on re-working this layering to make it easier to build super-minimal elements, and to opt-in to additional library features.
-
-We also have planned on adding inheritance back into Polymer, as it was dropped in Polymer 1.0 in favor of composition and behaviors. We've found though that this has sometimes lead to an overuse of composition to just slightly tweak a few features of an element. We want to ship a straightforward inheritance pattern so that developers can cheaply extend existing elements.
-
-*Goals*:
-
-- Evolve Polymer library towards a opt-in cost model
-  - Ship inheritance
-  - Design a relayering of Polymer
-
-Shadow dom and custom elements are also right around the corner in all major browsers - all vendors have [agreed](https://annevankesteren.nl/2016/02/custom-elements-no-longer-contentious) on v1 versions of [these](https://www.w3.org/TR/shadow-dom/) [specs](http://w3c.github.io/webcomponents/spec/custom/) and are working hard on [implementing](https://webkit.org/blog/4096/introducing-shadow-dom-api/). We want to prepare the Polymer library and all of our elements for the changes that come with these new specs, to make for a smooth transition. This may mean some minor breaking changes for elements and the library, but broad browser support without the need for polyfills will be an incredible leap forward.
-
-*Goals*:
-
-- Make the Polymer library compatible with latest web component specs and shipping implementations
-  - Update styling system to be compatible with custom properties
-  - Update shady DOM to be compatible with shadow dom v1
-  - Update custom elements treatment to be compatible with custom elements v1
-
-### Address user feedback on data system
-
-One of the common recurring pieces of feedback we hear about Polymer is confusion in the data binding system. We're looking to help make it clearer how to interface with data binding, to get all the lightweight sugar without some of the cognitive overhead when it comes to large, interconnect data models. This may come in the form of creating new library features, evolving existing features, building additional layers on top, or improving clarity in the Polymer documentation - or most likely some combination of all of the above.
+- Improve our offering of high-performance elements.
+  - Identify high-use elements and ship ultra-lightweight versions.
+  - Iterate on and share element performance measurement techniques and benchmarks.
 
 ### Tooling
 
@@ -80,17 +82,28 @@ We want to keep all of the tools modular, but for simplicity and better discover
 
 The [Polymer CLI](https://github.com/polymer/polymer-cli) pulls together a number of useful tools, and makes it easy to get started building a web component or web components-based application.
 
+*Goals*:
+
+- Rationalize our tools offering and improve code quality.
+  - Refactor all tools around new, fast, flexible static analyzer.
+  - Rename tools to make it easier to know what they do.
+- Launch 1.0 of the Polymer CLI.
+  - First-class support for more varied project structures.
+  - Refactored around new static analyzer.
+- Improve support for NPM.
+
+
 ### Community and Ecosystem
 
 The Polymer community has grown incredibly quickly and there are a number of individuals making extremely meaningful contributions to both the library and Polymer elements. We want to do more to highlight community work and generally better serve the Polymer and web components ecosystem. This means even more transparency around the core Polymer team's roadmap, more regular announcement and updates, and promoting element ownership beyond just the core Polymer team.
 
 *Goals*:
 
-- Accelerate Polymer + Community engagement
-  - Tighten the core Polymer team and community feedback loop - better evolve Polymer as the community evolves
-  - Publish all elements to npm and bower
-  - Regularly publish project and roadmap updates
-  - Work with community members to help drive elements forward
-  - Use [Polycasts](https://www.youtube.com/playlist?list=PLOU2XLYxmsII5c3Mgw6fNYCzaWrsM3sMN) and builtwithpolymer.org to highlight awesome elements being built
+- Accelerate Polymer + Community engagement.
+  - Tighten the core Polymer team and community feedback loop - better evolve Polymer as the community evolves.
+  - Publish all elements to npm and bower.
+  - Regularly publish project and roadmap updates.
+  - Work with community members to help drive elements forward.
+  - Use [Polycasts](https://www.youtube.com/playlist?list=PLOU2XLYxmsII5c3Mgw6fNYCzaWrsM3sMN) to highlight awesome elements being built.
 
 
