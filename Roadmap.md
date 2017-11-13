@@ -11,9 +11,9 @@ Last Updated: 9/29/2017 by wmginsberg
 ### Polymer 3.0-preview
 We announced an early sneak preview of Polymer 3.0 at [Polymer Summit 2017](https://www.youtube.com/watch?v=TDpiyrcOO30&list=PLNYkxOF6rcIDP0PqVaJxqNWwIgvoEPzJi). We then posted a two-part series on [what Polymer 3.0 entails](https://www.polymer-project.org/blog/2017-08-22-npm-modules.html) and [how to get started](https://www.polymer-project.org/blog/2017-08-23-hands-on-30-preview.html) with it. We've already posted all ~100 of our elements to npm. 
 
-The tl;dr is that we're adding migrating to yarn/npm from bower, migrating to ES Modules from HTML Imports, and not planning to change the API from Polymer 2.0. Because of that, the changes will be minimal and mechanical, so we built the Polymer Modulizer to automate the upgrade.  
+In summary: We're migrating to npm from Bower; migrating to ES Modules from HTML Imports; and not planning to change the API from Polymer 2.0. Because of that, the changes will be minimal and mechanical, so we built the Polymer Modulizer to automate the upgrade.  
 
-Our current timeline for release is illustrated best on [this diagram](https://youtu.be/JH6jEcLxJEI?t=21m8s). Over the next couple months we plan to add more 3.0 support for Tooling and the Polymer CLI, as well as Polymer Elements. Towards the end of the year we will focus on Modulizer support for Polymer Applications. Throughout all of this we are rethinking our Docs site information architecture and approach to onboarding and education while developing new content.  
+Our current timeline for release is illustrated best on [this diagram](https://youtu.be/JH6jEcLxJEI?t=21m8s). Over the next couple months we plan to add more 3.0 support for Tooling and the Polymer CLI, as well as Polymer Elements. Towards the end of the year we will focus on Modulizer support for Polymer Applications. Throughout all of this we are rethinking our Docs site organization and approach to onboarding and education while developing new content.  
 
 ### Polymer 2.0
 
