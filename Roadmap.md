@@ -14,7 +14,7 @@ We announced an early sneak preview of Polymer 3.0 at [Polymer Summit 2017](http
 
 In summary: We're migrating to npm from Bower; migrating to ES Modules from HTML Imports; and not planning to change the API from Polymer 2.0. Because of that, the changes will be minimal and mechanical, so we built the Polymer Modulizer to automate the upgrade.  
 
-We're planning to release Polymer 3.0 by the end of Q1, 2018. Until the release, we're planning on bi-weekly updates
+We're planning to release Polymer 3.0 by the end of Q1, 2018. Until the release, we're planning on frequent updates
 to the preview code on npm under the `@next` tag.
 
 Most 3.0-related work is taking place in the [Polymer Modulizer](https://github.com/Polymer/polymer-modulizer) repo. 
