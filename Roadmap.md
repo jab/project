@@ -6,14 +6,35 @@ As a caveat - this is a living doc, and will evolve as priorities grow and shift
 
 Please feel free to file issues on this repository if you have questions, concerns, or suggestions.
 
-Last Updated: 9/29/2017 by wmginsberg
+Last Updated: 1/18/2018 by arthurevans
 
-### Polymer 3.0-preview
-We announced an early sneak preview of Polymer 3.0 at [Polymer Summit 2017](https://www.youtube.com/watch?v=TDpiyrcOO30&list=PLNYkxOF6rcIDP0PqVaJxqNWwIgvoEPzJi). We then posted a two-part series on [what Polymer 3.0 entails](https://www.polymer-project.org/blog/2017-08-22-npm-modules.html) and [how to get started](https://www.polymer-project.org/blog/2017-08-23-hands-on-30-preview.html) with it. We've already posted all ~100 of our elements to npm. 
+### Polymer 3.0 (preview)
+
+We announced an early sneak preview of Polymer 3.0 at [Polymer Summit 2017](https://www.youtube.com/watch?v=TDpiyrcOO30&list=PLNYkxOF6rcIDP0PqVaJxqNWwIgvoEPzJi). We then posted a two-part series on [what Polymer 3.0 entails](https://www.polymer-project.org/blog/2017-08-22-npm-modules.html) and [how to get started](https://www.polymer-project.org/blog/2017-08-23-hands-on-30-preview.html) with it. 
 
 In summary: We're migrating to npm from Bower; migrating to ES Modules from HTML Imports; and not planning to change the API from Polymer 2.0. Because of that, the changes will be minimal and mechanical, so we built the Polymer Modulizer to automate the upgrade.  
 
-Our current timeline for release is illustrated best on [this diagram](https://youtu.be/JH6jEcLxJEI?t=21m8s). Over the next couple months we plan to add more 3.0 support for Tooling and the Polymer CLI, as well as Polymer Elements. Towards the end of the year we will focus on Modulizer support for Polymer Applications. Throughout all of this we are rethinking our Docs site organization and approach to onboarding and education while developing new content.  
+We're planning to release Polymer 3.0 by the end of Q1, 2018. Until the release, we're planning on frequent updates
+to the preview code on npm under the `@next` tag.
+
+Most 3.0-related work is taking place in the [Polymer Modulizer](https://github.com/Polymer/polymer-modulizer) repo. 
+
+Most elements are now being automatically converted for 3.0, but in many cases tests aren't running at all or some tests are broken. For details, see the [Polymer 3.0 element status page](https://github.com/Polymer/polymer-modulizer/blob/master/docs/polymer-3-element-status.md).
+
+The following items are on the roadmap for Polymer 3.0:
+
+-   Better support for incremental conversion in Modulizer. Instead of requiring you to convert an entire set of packages 
+    in one batch, Modulizer will output a manifest of the conversion for each package. The manifest can be published to npm 
+    along with the converted package. When converting, Modulizer will read the published manifests of dependencies
+    and skip conversion for dependencies that have already been converted and published.
+-   JavaScript Module bundling. Polymer Bundler will produce either HTML imports based bundles or JS modules based bundles.
+-   Bare-specifier support: Analyzer will resolve them, `polymer-build` and `polyserve` will rewrite them.
+-   Support for dynamic `import()`: `polymer-build` and `polyserve` can rewrite these when compiling out modules.
+-   Support for `import.meta.url`: Polymer Bundler, `polymer-build` and `polyserve` will rewrite these references for 
+    browsers that don't support this property.
+-   Updated documentation for Polymer 3.0.
+-   Updated versions on Polymer Starter Kit and other templates for Polymer 3.0.
+
 
 ### Polymer 2.0
 
