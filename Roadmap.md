@@ -20,7 +20,7 @@ Last Updated: 9/3/2019 by graynorton
   to meet requirements for internal use at Google, we continue to explore some changes that may affect APIs and usage
   patterns.
 
-* **Server-side rendering (SRR):** We're doing R&D on server-side rendering for lit-html and LitElement, with support
+* **Server-side rendering (SSR):** We're doing R&D on server-side rendering for lit-html and LitElement, with support
   for lazy, incremental, client-side hydration. This includes work on a node.js-based server and work in the libraries
   themselves. While we're targeting lit-html and LitElement first, we're designing the solution with support for
   alternative renderers and Web Component base classes in mind. We've made significant progress, but it's too early
